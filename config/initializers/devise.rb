@@ -297,4 +297,7 @@ Devise.setup do |config|
     ]
     jwt.expiration_time = 1.day.to_i
   end
+
+  # This will prevent devise from using flash messages which are not present in Rails api mode.
+  config.navigational_formats = []
 end
