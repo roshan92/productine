@@ -19,6 +19,8 @@ Bundler.require(*Rails.groups)
 
 module ProductApi
   class Application < Rails::Application
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
